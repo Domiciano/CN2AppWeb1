@@ -1,22 +1,17 @@
 import './App.css'
 //Declaracion
-import {Footer} from './components/Footer';
-import Counter from './components/Counter'
-import TaskList from './components/TaskList'
+//import {Footer} from './components/Footer';
+//import Counter from './components/Counter'
+//import TaskList from './components/TaskList'
+import LoginScreen from './screens/LoginScreen'
+import FakeStoreScreen from './screens/FakeStoreScreen'
+
 
 function App() {  
   return (
     <>
-      <h1>Reacts es lo mejor</h1>
-      <span>No hay que temer</span>
-      <TaskList/>
-      <br/><br/><br/>
-      <Counter/>
-      {/*USO */}
-      <Footer universityName="MIT"/>
-      <Footer universityName="Oxford"/>
-      <Footer universityName="Icesi"/>
-      
+      <LoginScreen/>
+      <FakeStoreScreen/>
     </>
   )
 }
