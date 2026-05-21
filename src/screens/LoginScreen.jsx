@@ -3,12 +3,22 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import { login } from '../services/AuthServices';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../hooks/useAuth';
 
 
 const LoginScreen = ()=>{ 
 
+    const navigate = useNavigate();
+    const {setToken} = useAuth();
+
     const handleLogin = async ()=>{
-        login();
+        //Guardar algo en el localstorage
+        localStorage.setItem("VAR1","Variable almacenada asdkasd"); // numbers, strings, booleans
+        let response = await login();
+        console.log(response);
+        setToken(response.token);
+        navigate('/');
     }
 
     return (

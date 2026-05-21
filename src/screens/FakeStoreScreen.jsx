@@ -10,17 +10,28 @@ import Button from '@mui/material/Button';
 import Chip from '@mui/material/Chip';
 import Rating from '@mui/material/Rating';
 import CircularProgress from '@mui/material/CircularProgress';
+import { useAuth } from '../hooks/useAuth';
 
 const FakeStoreScreen = () => {
 
     const [productList, setProductList] = useState([]);
     const [loading, setLoading] = useState(true);
+    const {token} = useAuth();
 
+
+    
     useEffect(() => {
-        getPokemonList().then((data) => {
+
+        console.log("TOKEN EN CONTEXT >>>>>>");
+        console.log(token);
+
+        const handleGetProduct = async ()=>{
+            let data = await getPokemonList();
             setProductList(data);
             setLoading(false);
-        });
+        }    
+
+        handleGetProduct();
     }, []);
 
     if (loading) {

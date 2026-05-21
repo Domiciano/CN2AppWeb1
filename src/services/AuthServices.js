@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { BASE_URL, PORT } from '../utils/Constants';
 
 //Promise<Array>
 const getPokemonList = async () => {
@@ -13,9 +14,9 @@ const login = async () => {
         password: '123456'
     };
     let response = await axios.post(
-        'http://192.168.131.145:8081/api/v1/auth/login', 
+        `http://${BASE_URL}:${PORT}/api/v1/auth/login`, 
         authRequest
     );
-    console.log(response);
+    return response.data;
 }
 export {getPokemonList, login};

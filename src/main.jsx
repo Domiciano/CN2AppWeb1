@@ -5,6 +5,7 @@ import App from './App.jsx'
 
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
+import {AuthProvider} from './components/AuthProvider.jsx'
 
 const darkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
 
@@ -18,7 +19,9 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <App />
+      <AuthProvider>
+        <App />
+      </AuthProvider>
     </ThemeProvider>
   </StrictMode>,
 )
