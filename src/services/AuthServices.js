@@ -8,7 +8,14 @@ const getPokemonList = async () => {
 }
 
 const login = async () => {
-    
+    let authRequest = {
+        username: 'admin',
+        password: '123456'
+    };
+    let response = await axios.post(
+        'http://192.168.131.145:8081/api/v1/auth/login', 
+        authRequest
+    );
+    console.log(response);
 }
-
-export {getPokemonList};
+export {getPokemonList, login};

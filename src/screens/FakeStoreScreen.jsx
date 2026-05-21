@@ -25,14 +25,14 @@ const FakeStoreScreen = ()=>{
             {productList.map(
                 (value) => 
                     (
-                        <>
+                        <Stack key={value.id} direction='column'>
                             <img src={value.image}></img>
-                            <Typography key={value.id}>
+                            <Typography >
                                 {value.title}
                             </Typography>
-                        </>
+                        </Stack>
                     )
-            )}
+            )}  
         </Stack>
     );
 }
