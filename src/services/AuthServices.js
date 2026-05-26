@@ -8,10 +8,10 @@ const getPokemonList = async () => {
     return response.data;
 }
 
-const login = async () => {
+const login = async (username, password) => {
     let authRequest = {
-        username: 'admin',
-        password: '123456'
+        username: username,
+        password: password
     };
     let response = await axios.post(
         `http://${BASE_URL}:${PORT}/api/v1/auth/login`, 

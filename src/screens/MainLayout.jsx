@@ -37,6 +37,7 @@ const MainLayout = () => {
 
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
                 {/* Aqui va un componente importante */}
+                <Outlet/>
             </Box>
         </Box>
     );
